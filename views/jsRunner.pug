@@ -1,0 +1,38 @@
+extends layout
+
+block headContent  
+  //- link(rel="stylesheet" type="text/css" href="/third-party/DataTables-1.10.16/css/dataTables.bootstrap.min.css")
+  script(type="text/javascript" src="/third-party/jQuery-3.2.1/jquery-3.2.1.min.js")
+  //- script(type="text/javascript" src="/third-party/DataTables-1.10.16/js/jquery.dataTables.min.js")
+  //- script(type="text/javascript" src="/third-party/DataTables-1.10.16/js/dataTables.bootstrap.min.js")
+  link(rel='stylesheet', href='/stylesheets/jsRunner.css')
+  script(src='/javascripts/sir_for_client.js')
+  //- script(src='/javascripts/calResponseTime.js')
+
+  //- link(rel="stylesheet" type="text/css" href="/third-party/Bootstrap-3.3.7/css/bootstrap.min.css")
+  //- script(type="text/javascript" src="/third-party/Bootstrap-3.3.7/js/bootstrap.min.js")
+  
+  link(rel="stylesheet" type="text/css" href="/third-party/bootstrap-4.1.0-dist/css/bootstrap.min.css")
+  script(type="text/javascript" src="/third-party/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js")
+
+block content
+  #root
+
+  #confirmModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='confirmModalLabel', aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          h5#confirmModalLabel.modal-title Modal title
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+          textarea
+            | ...
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') No
+          button.btn.btn-primary(type='button', data-dismiss='modal') Yes
+
+  script(src='/javascripts/jsRunner.bundle.js')
+
+  script(src='/javascripts/jsRunner.js')
+

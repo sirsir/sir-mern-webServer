@@ -1,0 +1,26 @@
+textarea{
+  display: block;
+  width: 90vw;
+}
+
+label{
+  margin-right: 1em;
+}
+
+.output label{
+  background-color: aliceblue;
+  border: solid blue;
+  border-radius: 1em;
+  padding: 0 1em;
+}
+
+.ace_editor{
+  width: 100% !important;
+}
+
+.modal-body textarea{
+  width: 100%;
+  min-height: 30em;
+  max-height: 90vh;
+  white-space: nowrap;
+}

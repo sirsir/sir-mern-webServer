@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block headContent
+  body
+    //- div #{filename}
+    //- div !{filename.match(/^.*\/(.*?)\.pug$/)[1]}
+    //- if filename.match(/^.*\/(.*?)\.pug$/)[1]=='index'
+    //-   block content
+    if ['memos','jsRunner'].indexOf(filename.match(/^.*\/(.*?)\.pug$/)[1]) != -1
+      if serverStatus.mongoDb_isConnected
+        block content
+      else
+        div.panel.panel-default
+          .panel-heading Server Status
+          .panel-body
+            textarea#serverStatus.form-control(onkeyup='this.style.height = "";this.style.height = this.scrollHeight + "px"') !{JSON.stringify(serverStatus,null,"  ")}
+
+        div.alert.alert-danger(role="alert")
+          h4.alert-heading
+            | Troubleshooting:
+          strong "mongoDb_connected": false
+          p $:> try start mongodb server:> mongod --bind_ip_all'
+          hr
+            
+        script.
+          //- $('#serverStatus').on( 'change keyup keydown paste cut', 'textarea', function (){
+          //-     $(this).height(0).height(this.scrollHeight);
+          //- }).find( '#serverStatus' ).change()
+
+          $('#serverStatus').trigger('keyup')
+    else
+      block content
+      
+

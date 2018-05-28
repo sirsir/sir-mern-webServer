@@ -1,0 +1,43 @@
+extends layout
+block headContent
+  
+  //- link(rel="stylesheet" type="text/css" href="/third-party/DataTables-1.10.16/css/dataTables.bootstrap.min.css")
+  script(type="text/javascript" src="/third-party/jQuery-3.2.1/jquery-3.2.1.min.js")
+  
+  //- link(rel="stylesheet" type="text/css" href="/third-party/Bootstrap-3.3.7/css/bootstrap.min.css")
+  //- script(type="text/javascript" src="/third-party/Bootstrap-3.3.7/js/bootstrap.min.js")
+  
+  link(rel="stylesheet" type="text/css" href="/third-party/bootstrap-4.1.0-dist/css/bootstrap.min.css")
+  script(type="text/javascript" src="/third-party/bootstrap-4.1.0-dist/js/bootstrap.min.js")
+    
+block content
+  h4.page-heading= title
+  p Welcome to #{title}
+
+  div.alert.alert-info(role="alert")
+    h4.alert-heading Shortcuts:
+    ul
+      li
+        a(href='/memos') Memo+Todo+Bookmarks
+      li
+        a(href='/jsRunner') Javascript Runner
+      li
+        a(href='/calResponseTime') Amivoice:>Calculate Response Time
+  div.panel.panel-default
+    .panel-heading Server Status
+    .panel-body
+      textarea#serverStatus.form-control(onkeyup='this.style.height = "";this.style.height = this.scrollHeight + "px"') !{JSON.stringify(serverStatus,null,"  ")}
+
+  div.alert.alert-danger(role="alert")
+    h4.alert-heading
+      | Troubleshooting:
+    strong "mongoDb_connected": false
+    p $:> try start mongodb server:> mongod --bind_ip_all'
+    hr
+
+  script.
+    //- $('#serverStatus').on( 'change keyup keydown paste cut', 'textarea', function (){
+    //-     $(this).height(0).height(this.scrollHeight);
+    //- }).find( '#serverStatus' ).change()
+
+    $('#serverStatus').trigger('keyup')

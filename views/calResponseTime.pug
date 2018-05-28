@@ -1,0 +1,36 @@
+extends layout
+
+block headContent
+  link(rel="stylesheet" type="text/css" href="/third-party/Bootstrap-3.3.7/css/bootstrap.min.css")
+  link(rel="stylesheet" type="text/css" href="/third-party/DataTables-1.10.16/css/dataTables.bootstrap.min.css")
+  script(type="text/javascript" src="/third-party/jQuery-3.2.1/jquery-3.2.1.min.js")
+  script(type="text/javascript" src="/third-party/Bootstrap-3.3.7/js/bootstrap.min.js")
+  script(type="text/javascript" src="/third-party/DataTables-1.10.16/js/jquery.dataTables.min.js")
+  script(type="text/javascript" src="/third-party/DataTables-1.10.16/js/dataTables.bootstrap.min.js")
+  link(rel='stylesheet', href='/stylesheets/calResponseTime.css')
+  script(src='/javascripts/calResponseTime.js')
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p #{voicelogs}
+
+  table.table#table_id.display(width='100%')
+
+  script(type='text/javascript')
+    | var title = '#{title}'
+    | var callDetails = '!{callDetails}'
+
+
+  // table#table_id2.display
+  //   thead
+  //     tr
+  //       th Column 1
+  //       th Column 2
+  //   tbody
+  //     tr
+  //       td Row 1 Data 1
+  //       td Row 1 Data 2
+  //     tr
+  //       td Row 2 Data 1
+  //       td Row 2 Data 2
