@@ -94,12 +94,14 @@ class MemoItems extends React.Component {
                             {item.updated_at?Sugar.Date.long(new Date(item.updated_at)):null}
                             
                           </div>
-                          <a className="btn btn-default" href='#' onClick={this.onClickEdit.bind(this,itemsIdx)} aria-label="Settings">
-                            <i className="fa fa-edit" aria-hidden="true"></i>
-                          </a>
-                          <a className="btn btn-default" href="#" onClick={this.onClickEdit.bind(this,itemsIdx)} aria-label="Delete">
-                            <i className="fa fa-trash-alt" aria-hidden="true"></i>
-                          </a>
+                          <div className="buttons-edit-delete">
+                            <a className="btn btn-default" href='#' onClick={this.onClickEdit.bind(this,itemsIdx)} aria-label="Settings">
+                              <i className="fa fa-edit" aria-hidden="true"></i>
+                            </a>
+                            <a className="btn btn-default" href="#" onClick={this.onClickEdit.bind(this,itemsIdx)} aria-label="Delete">
+                              <i className="fa fa-trash-alt" aria-hidden="true"></i>
+                            </a>
+                          </div>
                         </div>
                       }
                     </div>

@@ -141,7 +141,7 @@ class FormEditItem extends React.Component {
       <div className='tag-checkboxes'>
 
         {
-          Object.keys(tagsAll).map(function(tag,idx){
+          Object.keys(tagsAll).sort((a,b)=>a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase())).map(function(tag,idx){
 
             let checked = tagsHere.includes(tag)?
               'checked':false;

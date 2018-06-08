@@ -139,7 +139,7 @@ class Toolbar extends React.Component {
               className="fa fa-sort-alpha-down selected"
               href="#"
               onClick={
-                (e)=>this.sortItem(e,'title')}
+                (e)=>this.sortItem(e,'')}
             ></a>
           }
           {
@@ -156,7 +156,7 @@ class Toolbar extends React.Component {
               className="fa fa-sort-alpha-up selected"
               href="#"
               onClick={
-                (e)=>{}
+                (e)=>this.sortItem(e,'')
               }
             ></a>
           }
@@ -177,7 +177,7 @@ class Toolbar extends React.Component {
               className='selected'
               href="#"
               onClick={
-                (e)=>{}
+                (e)=>this.sortItem(e,'')
               }
             >
               <i className="fas fa-long-arrow-alt-down">
@@ -202,7 +202,7 @@ class Toolbar extends React.Component {
               href="#"
               className='selected'
               onClick={
-                (e)=>{}
+                (e)=>this.sortItem(e,'')
               }
             >
               <i className="fas fa-long-arrow-alt-up">

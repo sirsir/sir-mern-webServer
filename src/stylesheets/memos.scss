@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+  font-size: 12px;
 }
 
 header {
@@ -429,7 +430,9 @@ button {
   &>div,input,label{
     display: inline-block;
     width: auto;
-    font-size: 0.8em;
+    font-size: 1em;
+    padding: 0px 1px;
+    margin: 0.2em 1px;
   }
 
   &>div{
@@ -442,6 +445,7 @@ button {
 
   label{
     padding-left: 0.3em;
+
   }
 }
 
@@ -454,7 +458,8 @@ button {
   font-weight: 700;
   width: 100%;
   height: 2em;
-  background-color: #eee;
+  background-color: #c9e2ff;
+  // background-color: #ffc9e2;
   display: table;
 
   &>div{
@@ -464,6 +469,21 @@ button {
 
   .title{
     padding-left: 1em;
+  }
+
+  a[aria-label="Delete"] {
+    color: red;
+  }
+
+  .buttons-edit-delete{
+    border: solid red 1px;
+    display: inline-block;
+    padding: 0px 2px;
+    border-radius: 0.3em;
+  }
+
+  a{
+    padding: 0px;
   }
 
 }
@@ -559,6 +579,7 @@ div.tags-list{
     padding: 1em 1em 1em;
     margin-left: 2em;
     background: aliceblue;
+    // zoom: 60%;
   }
 }
 
@@ -646,6 +667,7 @@ div.tags-list{
   padding: 1em;
   vertical-align: top;
   background-color: aliceblue;
+  zoom: 50%;
 }
 
 .detail,
@@ -674,7 +696,8 @@ div.tags-list{
 }
 
 .modal-dialog{
-    width: 100%;
+    width: 90%;
+    max-width: 100%;
 }
 
 #modal4edit  {
@@ -688,4 +711,10 @@ div.tags-list{
   position: absolute;
   right: 1em;
   z-index: 2000;
+}
+
+.rc-select{
+  input{
+    padding: 0;
+  }
 }

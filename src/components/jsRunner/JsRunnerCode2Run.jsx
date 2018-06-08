@@ -148,7 +148,7 @@ class JsRunnerSelect extends React.Component {
     //     {this.renderNote(task)}
     return (
       <div>
-        <button className="btn btn-default save" id="saveButton">Save (Overwrite!)</button>
+        <button className="btn btn-primary save" id="saveButton">Save (Overwrite!)</button>
         <button className="btn btn-info saveNew" id="saveAsNewButton">Save As New</button>
         <button className="btn btn-danger" id="deleteButton">Delete</button>
         <button className="btn btn-primary disabled" id="loadDefaultButton" data-toggle="popover" data-placement="top" data-content="UNDER CONSTRUCTION!">Load Default</button>

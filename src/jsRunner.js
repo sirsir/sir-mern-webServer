@@ -65,8 +65,8 @@ render(
   <div>
     <DevTools />    
     <JsRunnerSelect store={store4JsRunner}/>
-    <button id="runButton" className="btn btn-default" type="button">
-      <span className="glyphicon glyphicon-play-circle">RUN</span>
+    <button id="runButton" className="btn btn-primary" type="button">
+      <i className="fas fa-play"></i> RUN
     </button>
 
 

@@ -47,7 +47,7 @@ var db = mongoose.connection;
 db.on('error', err=>{
   console.log("Unable to connect to mongoDb: " + mongoDB)
   console.log(err);
-  console.log('try start mongodb server:> mongod --bind_ip_all')
+  console.log('try start mongodb server:> mongod --bind_ip_all &')
 });
 db.once('open', ()=>{
   serverStatus.mongoDb_isConnected = true;

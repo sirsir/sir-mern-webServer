@@ -21,7 +21,8 @@ export default class MemosModel {
   @observable totalTags = 0
 
   @observable isShowing_tagsList = false
-  @observable sortBy = "-time"
+  // @observable sortBy = "-time"
+  @observable sortBy = ""
 
   // @computed
   // get titles() {
@@ -236,6 +237,7 @@ export default class MemosModel {
 
   @action
   search() {
+    this.sortBy = ""
     // this.memos.push(memo);
     if(this.keyword4search.indexOf('tag:') != -1){
       let tag = this.keyword4search.match(/tag:(.*)$/i)[1]
@@ -312,7 +314,14 @@ export default class MemosModel {
 
   @action
   sortMemos(sortBy) {
-    this.sortBy = sortBy
+    console.log(sortBy)
+    console.log(this.sortBy)
+
+    if (this.sortBy == sortBy){
+      this.sortBy = ""
+    }else{
+      this.sortBy = sortBy
+    }
 
     this.memos = this.memos.sort(function(m1,m2){
       if (sortBy === 'title'){
@@ -333,8 +342,13 @@ export default class MemosModel {
         let c1 = m1.updated_at || m1.timestamp || new Date(Date.UTC(0))
         let c2 = m2.updated_at || m2.timestamp || new Date(Date.UTC(0))
         return new Date(c2).getTime() - new Date(c1).getTime()
+      } else{
+        return m1._searched_order - m2._searched_order        
       }
     })
+  
+
+    
 
   }
 
@@ -348,7 +362,8 @@ export default class MemosModel {
 
   @action
   addMany(memos) {
-    memos.forEach(memo => {
+    memos.forEach((memo,i) => {
+      memo._searched_order = i
       this.add(memo)
     })
 
