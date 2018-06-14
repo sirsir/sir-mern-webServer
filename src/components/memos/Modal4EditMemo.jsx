@@ -95,7 +95,7 @@ class Modal4EditMemo extends React.Component {
   render (){
     let memo = toJS(this.props.store.editingMemo)
     return (
-      <div className="modal fade" id="modal4edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-keyboard="false">
+      <div className="modal fade" id="modal4edit" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-keyboard="false">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">

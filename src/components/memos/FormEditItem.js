@@ -196,7 +196,7 @@ class FormEditItem extends React.Component {
         
         <input type="hidden" name="_id" placeholder="_id" readOnly="true" value={memo._id} />
         {
-          <input type="hidden" name="idx" placeholder="idx" readOnly="true" value={memo._id} />
+          // <input type="hidden" name="idx" placeholder="idx" readOnly="true" value={memo._id} />
 
         }
         <div className='form-label'>Title: </div>
@@ -251,7 +251,8 @@ class FormEditItem extends React.Component {
               showLineNumbers: true,
               tabSize: 2,
               minLines: 20,
-              maxLines: 40
+              maxLines: 40,
+              fontSize: "0.8em"
             }}
             editorProps={{$blockScrolling: true}}
            />
