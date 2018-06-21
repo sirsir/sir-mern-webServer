@@ -64,4 +64,5 @@ typings/
 *.hot-update.*
 
 # bundle-files
-jsRunner.bundle.js
+**/*.bundle.js
+
