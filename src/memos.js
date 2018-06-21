@@ -123,3 +123,6 @@ render(
 
 // playing around in the console
 window.store = store4memos;
+
+// Prevent leave page
+window.onbeforeunload = function() { return "Your work will be lost."; };
