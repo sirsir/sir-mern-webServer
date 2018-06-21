@@ -62,3 +62,7 @@ typings/
 
 # webpack --watch
 *.hot-update.*
+
+# bundle-files
+# **/*.bundle.js
+
