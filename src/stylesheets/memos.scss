@@ -2,6 +2,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
   font-size: 12px;
+  width: 80vw;
+
 }
 
 header {
@@ -571,16 +573,6 @@ div.tags-list{
     padding: 1em;
   }
 
-  .detail{
-    white-space: pre-wrap;
-    // max-height: 30vh;
-    max-width: 80vw;
-    overflow: auto;
-    padding: 1em 1em 1em;
-    margin-left: 2em;
-    background: aliceblue;
-    // zoom: 60%;
-  }
 }
 
 
@@ -618,6 +610,7 @@ div.tags-list{
     width: 100% !important;
     min-height: $height !important;
     height: 100% !important;
+    // font-size: 1.5em;
     // height: auto;
 
     .ace_content{
@@ -670,6 +663,56 @@ div.tags-list{
   zoom: 50%;
 }
 
+
+// .detail{
+//   white-space: pre-wrap;
+//   // max-height: 30vh;
+//   max-width: 80vw;
+//   overflow: auto;
+//   padding: 1em 1em 1em;
+//   margin-left: 2em;
+//   background: aliceblue;
+//   // zoom: 60%;
+// }
+
+.detail{
+    white-space: pre-wrap;
+    // max-height: 30vh;
+    max-width: 80vw;
+    overflow: auto;
+    padding: 1em 1em 1em;
+    margin-left: 2em;
+    background: aliceblue;
+//   // zoom: 60%;
+
+  *{
+    font-size: 10pt;
+  }
+  h1{
+    font-size: 1.3em;
+    font-weight: 900;
+  }
+  h2{
+    font-size: 1.2em;
+  }
+  h3{
+    font-size: 1.1em;
+    padding: 0.2em;
+  }
+  h4{
+    font-size: 1.05em;
+    font-weight: 900;
+    width: fit-content;
+    border: blue solid;
+    border-radius: 1em;
+    padding: 0.2em;
+  }
+  p{
+    margin: 0px;
+    padding: 0.2em;
+  }
+}
+
 .detail,
 .detail_preview{
   *{
@@ -693,18 +736,38 @@ div.tags-list{
       }
     }
   }
+
+  pre{
+    background-color: black;
+    color: white;
+  }
 }
 
 .modal-dialog{
-    width: 90%;
-    max-width: 100%;
+    font-size: 8pt;
+    width: 80vw;
+    max-width: 80vw;    
+    margin: 2em;
 }
 
 #modal4edit  {
   input[type='text']{
     border: solid 1px;
-    height: 1em;
+    // height: 1em;
+    font-size: 0.8em;
+    padding: 1em;
   }
+
+  input[type='button']{
+    border: solid 1px;
+    // height: 1em;
+    font-size: 0.8em;
+    padding: 1em;
+  }
+
+  button{
+      font-size: 7pt;
+    }
 }
 
 .top-buttons{

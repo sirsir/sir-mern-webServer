@@ -92,3 +92,6 @@ render(
 
 // playing around in the console
 window.store = store4JsRunner;
+
+// Prevent leave page
+window.onbeforeunload = function() { return "Your work will be lost."; };
