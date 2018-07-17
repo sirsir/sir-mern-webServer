@@ -101,7 +101,7 @@ class JsRunnerSelect extends React.Component {
           return (
             <Option value={t.title} key={t._id}>
               <span style={{ 
-                  'font-size': '0.7em'
+                  'fontSize': '0.7em'
                 }}
               >{t.title}</span>
             </Option>)

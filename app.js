@@ -13,6 +13,7 @@ var jsRunner = require('./routes/jsRunner');
 var jsRunnerApi = require('./routes/jsRunnerApi');
 var memos = require('./routes/memos');
 var memosApi = require('./routes/memosApi');
+var sirFileFolderApi = require('./routes/sirFileFolderApi');
 
 
 //=== Set mongoose
@@ -90,6 +91,7 @@ app.use('/jsRunner', jsRunner);
 app.use('/jsRunnerApi', jsRunnerApi);
 app.use('/memos', memos);
 app.use('/memosApi', memosApi);
+app.use('/sirFileFolderApi', sirFileFolderApi);
 
 
 

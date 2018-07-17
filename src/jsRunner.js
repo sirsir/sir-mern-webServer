@@ -70,7 +70,7 @@ render(
     </button>
 
 
-    <Tabs forceRenderTabPanel="true">
+    <Tabs forceRenderTabPanel={true}>
     <TabList>
       <Tab>Function Runner</Tab>
       <Tab>Function Editor</Tab>

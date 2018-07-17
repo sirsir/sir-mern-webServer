@@ -23,23 +23,22 @@ class JsRunnerData2Run extends React.Component {
 
   outputs = null
 
-  input2element = (input,key,inputORoutput)=>{
+  input2element = (input,key,inputORoutput,idx)=>{
     let element = null
     let tooltip = ''
 
     let localStarageData = localStorage.getItem(inputORoutput+'_'+key) || ''
 
-
-    console.log(input)
     switch(input.type) {
       case 'input':
       case 'textbox':
           // element =  <Text field="firstName" placeholder='First Name' />;
-          element = <input type="text" className="form-control" id={inputORoutput+'_'+key} title={tooltip} data-toggle="tooltip" placeholder={inputORoutput+'_'+key} />
+          element = <input type="text" key={idx} className="form-control" id={inputORoutput+'_'+key} title={tooltip} data-toggle="tooltip" placeholder={inputORoutput+'_'+key} />
           break;
       case 'select':
           element = <Select
             id={inputORoutput+'_'+key}  
+            key={idx}
             style={{ width: 500 }}
             onSelect={this.onSelect}
             notFoundContent=""
@@ -51,7 +50,7 @@ class JsRunnerData2Run extends React.Component {
           >
             {input.values.map((t,i)=>{
               return (
-                <Option value={t} key={t}>
+                <Option value={t} key={i}>
                   <span style={{ 
                       'font-size': '0.7em'
                     }}
@@ -61,18 +60,18 @@ class JsRunnerData2Run extends React.Component {
           </Select>;
           break;
       case 'textarea':
-          element= <textarea type="text" class="form-control" id={inputORoutput+'_'+key} rows="10" placeholder={inputORoutput+'_'+key}>{localStarageData}</textarea>;
+          element= <textarea key={idx} type="text" className="form-control" id={inputORoutput+'_'+key} rows="10" placeholder={inputORoutput+'_'+key} defaultValue={localStarageData}></textarea>;
           break;
       case 'iframe':
-          element= <div className="embed-responsive embed-responsive-16by9"><iframe id={inputORoutput+'_'+key} className="embed-responsive-item" src="" style="zoom:0.60" width="99.6%" height="250" frameborder="1px"></iframe></div>;
+          element= <div key={idx} className="embed-responsive embed-responsive-16by9"><iframe key={idx} id={inputORoutput+'_'+key} className="embed-responsive-item" src="" style="zoom:0.60" width="99.6%" height="250" frameborder="1px"></iframe></div>;
           break;
       default:
           element = null;
           break;
     }
     return (
-      <div>
-        <label >{key}</label>  
+      <div key={idx}>
+        <label >{ input.label || key }</label>  
         {element}
       </div>
     )
@@ -100,18 +99,18 @@ class JsRunnerData2Run extends React.Component {
         
     //   }
 
-    return Object.keys(task.inputs).map(key=>{
-      return this.input2element(task.inputs[key],key,"input")
+    return Object.keys(task.inputs).map((key,idx)=>{
+      return this.input2element(task.inputs[key],key,"input",idx)
     })
 
   }
 
   outputs2form = (task) => {
 
-    return Object.keys(task.outputs).map(key=>{
+    return Object.keys(task.outputs).map((key,idx)=>{
       return (
-        <div className="output">
-          { this.input2element(task.outputs[key],key,"output") }
+        <div className="output" key={idx}>
+          { this.input2element(task.outputs[key],key,"output",idx) }
         </div>
       )
     })
@@ -120,7 +119,6 @@ class JsRunnerData2Run extends React.Component {
 
   getInputs = () =>{
     let task = toJS(this.props.store.task)
-    console.log(task)
     if (! task){
       return null
     }
